@@ -372,10 +372,10 @@ class RenderRadialGauge extends RenderBox {
         pointer.centerOffsetAbsolute ?? pointer.centerOffset * size.width;
 
     /// The length of the needle pointer in pixels.
-    final length = pointer.lengthAbsolute ?? pointer.length * size.width / 2;
+    final length = pointer.lengthAbsolute ?? (pointer.length * size.width / 2);
 
-    final thicknessStart = pointer.thicknessStart ?? pointer.thickness;
-    final thicknessEnd = pointer.thicknessEnd ?? pointer.thickness;
+    final thicknessStart = (pointer.thicknessStart ?? pointer.thickness) * size.width / 2;
+    final thicknessEnd = (pointer.thicknessEnd ?? pointer.thickness) * size.width / 2;
     final thicknessMax = max(thicknessStart, thicknessEnd);
 
     /// The rectangle the needle is drawn in.
